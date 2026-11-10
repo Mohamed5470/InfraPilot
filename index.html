@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InfraPilot — Civil 3D Productivity Tools</title>
+<style>
+  :root{
+    --blue:#1E5BF0; --cyan:#10B9E6; --amber:#FB8C00; --ink:#16233a; --muted:#5a6b85;
+    --line:#e5ebf4; --bg:#f6f9ff; --card:#fff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  a.btn{display:inline-block;background:var(--amber);color:#fff;text-decoration:none;padding:13px 26px;border-radius:10px;font-weight:600;box-shadow:0 6px 18px rgba(251,140,0,.35)}
+  a.btn.alt{background:rgba(255,255,255,.16);box-shadow:none;border:1px solid rgba(255,255,255,.5)}
+  /* hero */
+  .hero{background:linear-gradient(120deg,var(--blue),var(--cyan));color:#fff;padding:64px 0 72px;text-align:center}
+  .logo{width:96px;height:96px;margin-bottom:10px}
+  .hero h1{margin:0;font-size:46px;letter-spacing:-.5px}
+  .hero .sub{font-size:20px;opacity:.95;margin:10px 0 26px}
+  .hero .cta a{margin:0 8px}
+  .hero .small{margin-top:16px;opacity:.85;font-size:14px}
+  /* sections */
+  section{padding:54px 0}
+  h2{font-size:30px;text-align:center;margin:0 0 8px}
+  .tagline{text-align:center;color:var(--muted);margin:0 auto 34px;max-width:620px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 1px 2px rgba(20,40,80,.04)}
+  .feat .ico{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;margin-bottom:12px}
+  .feat h3{margin:0 0 6px;font-size:18px}
+  .feat p{margin:0;color:#2b3a52;font-size:15px}
+  /* panels list */
+  .cols{columns:2;column-gap:40px;max-width:760px;margin:0 auto}
+  .cols li{margin:6px 0;break-inside:avoid}
+  .cols b{color:var(--blue)}
+  /* pricing */
+  .price{background:var(--card);border:1px solid var(--line);border-radius:16px;max-width:420px;margin:0 auto;padding:30px;text-align:center;box-shadow:0 10px 30px rgba(20,40,80,.08)}
+  .price .amt{font-size:40px;font-weight:700;margin:6px 0}
+  .price .amt span{font-size:16px;color:var(--muted);font-weight:400}
+  .price ul{list-style:none;padding:0;margin:18px 0;text-align:left}
+  .price li{padding:7px 0;border-bottom:1px solid var(--line)}
+  .price li::before{content:"✓";color:#1e9e52;font-weight:700;margin-right:8px}
+  .pay{display:flex;gap:14px;margin:18px 0 6px}
+  .pay-opt{flex:1;border:1px solid var(--line);border-radius:12px;padding:14px 10px;background:#fbfdff}
+  .pay-opt .flag{font-size:13px;color:var(--muted);margin-bottom:6px}
+  .opt-price{font-size:26px;font-weight:700;margin-bottom:10px}
+  .opt-price span{font-size:13px;color:var(--muted);font-weight:400}
+  .pay-opt .btn{display:block;padding:11px 10px}
+  .pay-opt small{display:block;color:var(--muted);margin-top:8px;font-size:12px}
+  .btn.insta{background:#7a3ff2;box-shadow:0 6px 18px rgba(122,63,242,.3)}
+  .after{color:var(--muted);font-size:13px;margin:14px 0 0;line-height:1.5}
+  @media(max-width:520px){.pay{flex-direction:column}}
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:820px;margin:0 auto}
+  .step{text-align:center}
+  .step .n{width:40px;height:40px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+  footer{background:#0f1b30;color:#cdd8ea;text-align:center;padding:30px 0}
+  footer a{color:#fff}
+  @media(max-width:760px){.grid,.how{grid-template-columns:1fr}.cols{columns:1}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+      <rect x="6" y="6" width="88" height="88" rx="22" fill="rgba(255,255,255,.16)"/>
+      <ellipse cx="50" cy="61" rx="38" ry="7" fill="#cbd6e6"/>
+      <path d="M22 60 A28 30 0 0 1 78 60 Z" fill="#fff"/>
+      <ellipse cx="50" cy="58" rx="24" ry="3.5" fill="#cbd6e6"/>
+      <polyline points="29,52 40,43 51,48 62,39" fill="none" stroke="#FB8C00" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="51" y1="48" x2="63" y2="55.5" stroke="#FB8C00" stroke-width="3.4" stroke-linecap="round"/>
+      <g fill="#FB8C00"><circle cx="29" cy="52" r="3.6"/><circle cx="40" cy="43" r="3.6"/><circle cx="51" cy="48" r="3.6"/><circle cx="62" cy="39" r="3.6"/><circle cx="63" cy="55.5" r="3.6"/></g>
+    </svg>
+    <h1>InfraPilot</h1>
+    <div class="sub">Powerful productivity tools for Autodesk Civil 3D</div>
+    <div class="cta">
+      <a class="btn" href="#buy">Buy a licence</a>
+      <a class="btn alt" href="#features">See the tools</a>
+    </div>
+    <div class="small">Free 14-day trial · Civil 3D 2025, 2026 &amp; 2027</div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Do a day's work in minutes</h2>
+    <p class="tagline">InfraPilot adds 30+ one-click tools for pipe and pressure networks, labels, blocks and surfaces —
+    right inside the Civil 3D ribbon.</p>
+    <div class="grid">
+      <div class="feat"><div class="ico">⇄</div><h3>Pressure networks, solved</h3><p>Auto-connect parts with the right fitting, split networks, build pipe runs from parts, add vertical risers, and send lines to profiles.</p></div>
+      <div class="feat"><div class="ico">◴</div><h3>Gravity pipes &amp; manholes</h3><p>Feature lines to pipes and back, bulk elevations, split pipes into profiles, rim elevations from a surface, joint checks.</p></div>
+      <div class="feat"><div class="ico">⤢</div><h3>Labels that never overlap</h3><p>Arrange plan labels into tidy, non-crossing columns automatically — no more dragging labels one by one.</p></div>
+      <div class="feat"><div class="ico">#</div><h3>Rename in one pass</h3><p>Rename parts along the network with a prefix + number + suffix convention, and rename block definitions in a grid.</p></div>
+      <div class="feat"><div class="ico">▦</div><h3>Blocks on the surface</h3><p>Drop blocks to a surface elevation and keep them linked, so they follow the surface as it changes.</p></div>
+      <div class="feat"><div class="ico">↺</div><h3>Safe &amp; reversible</h3><p>Every tool is a single Undo step, works on your current selection, and writes a clear log you can review.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#eef3fc">
+  <div class="wrap">
+    <h2>Every tool included</h2>
+    <p class="tagline">One licence, the whole toolbox.</p>
+    <ul class="cols">
+      <li><b>Feature Lines:</b> Drape to Surface</li>
+      <li><b>Pipes:</b> Feature Lines ⇄ Pipes</li>
+      <li><b>Pipes:</b> Pipes to Alignments</li>
+      <li><b>Pipes:</b> Pipe Elevations</li>
+      <li><b>Pipes:</b> Split Pipes · Offset Pipes</li>
+      <li><b>Pipes:</b> Swap Parts · Joint Check</li>
+      <li><b>Pipes:</b> Manhole Rims · Blocks to Manholes</li>
+      <li><b>Pressure:</b> Auto Connect</li>
+      <li><b>Pressure:</b> Split Network</li>
+      <li><b>Pressure:</b> Pipe Runs from Parts</li>
+      <li><b>Pressure:</b> Swap Pressure Parts</li>
+      <li><b>Pressure:</b> Split Pressure Pipes</li>
+      <li><b>Pressure:</b> Pressure to Alignments</li>
+      <li><b>Pressure:</b> Vertical Riser · Detach Runs</li>
+      <li><b>Utilities:</b> Rename Parts · Arrange Labels</li>
+      <li><b>Blocks:</b> Rename Blocks · Block Level</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>Up and running in 3 steps</h2>
+    <p class="tagline"></p>
+    <div class="how">
+      <div class="step"><div class="n">1</div><h3>Install</h3><p>Run the installer. The InfraPilot tab appears in Civil 3D automatically.</p></div>
+      <div class="step"><div class="n">2</div><h3>Try free</h3><p>Use every tool free for 14 days — no key needed.</p></div>
+      <div class="step"><div class="n">3</div><h3>Activate</h3><p>Open Activate, send your Machine ID, paste your key. Done.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="buy" style="background:#eef3fc">
+  <div class="wrap">
+    <h2>Get InfraPilot</h2>
+    <p class="tagline">Monthly subscription, per machine. Cancel anytime. Pick the option for your region.</p>
+    <div class="price">
+      <div style="font-weight:600;margin-bottom:6px">InfraPilot — Full toolbox</div>
+      <ul>
+        <li>All 30+ tools, all panels</li>
+        <li>Civil 3D 2025, 2026 &amp; 2027</li>
+        <li>14-day free trial</li>
+        <li>Free updates while subscribed</li>
+        <li>Email support</li>
+      </ul>
+
+      <div class="pay">
+        <div class="pay-opt">
+          <div class="flag">🌍 Outside Egypt</div>
+          <div class="opt-price">$15<span> / month</span></div>
+          <a class="btn" href="PASTE_YOUR_LEMONSQUEEZY_LINK_HERE">Pay with card</a>
+          <small>Visa / Mastercard, worldwide</small>
+        </div>
+        <div class="pay-opt">
+          <div class="flag">🇪🇬 Inside Egypt</div>
+          <div class="opt-price">500<span> EGP / month</span></div>
+          <a class="btn insta" href="https://ipn.eg/S/mohamedrreda/instapay/6XgVCs" target="_blank" rel="noopener">Pay with InstaPay</a>
+          <small>Instant bank transfer</small>
+        </div>
+      </div>
+
+      <p class="after">After paying, email your payment confirmation and your <strong>Machine&nbsp;ID</strong> to
+      <a href="mailto:ramdanmohamed430@gmail.com?subject=InfraPilot%20payment%20(1%20month)&body=Hello%20Mohamed%2C%0D%0A%0D%0AI%20paid%20for%20InfraPilot%20(Monthly%20-%20%2410%2Fmonth%2C%201%20month).%0D%0APayment%20method%3A%20(card%20%2F%20InstaPay)%0D%0A%0D%0AMy%20Machine%20ID%3A%20(open%20InfraPilot%20in%20Civil%203D%2C%20click%20Activate%2C%20Copy%20ID%2C%20paste%20here)%0D%0A%0D%0AName%3A%0D%0ACompany%3A%0D%0A%0D%0A(payment%20screenshot%20attached)%0D%0A%0D%0AThank%20you.">ramdanmohamed430@gmail.com</a>
+      and your activation key will be sent to you.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>InfraPilot</strong> — Civil 3D productivity tools by Mohamed Reda<br>
+    Contact: <a href="mailto:ramdanmohamed430@gmail.com">ramdanmohamed430@gmail.com</a><br>
+    <span style="opacity:.7;font-size:13px">© Mohamed Reda. Autodesk and Civil 3D are trademarks of Autodesk, Inc.</span>
+  </div>
+</footer>
+</body>
+</html>
